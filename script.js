@@ -14,10 +14,10 @@ function selecaoUnica(evento) {
   const itemDaLista = document.getElementsByTagName('li');
   for (let index = 0; index < itemDaLista.length; index += 1) {
     if (itemDaLista[index] !== evento.target) {
-      itemDaLista[index].style.backgroundColor = 'white'
+      itemDaLista[index].style.backgroundColor = 'white';
     }
   }
-};
+}
 
 // function mudandoBackground() {
 //   const itemDaLista = document.getElementsByTagName('li');
@@ -34,9 +34,10 @@ const selecionandoTarefas = () => {
   for (let index = 0; index < itemDaLista.length; index += 1) {
     itemDaLista[index].addEventListener('click', (event) => {
       // event.target.classList.add('marcado')
-      event.target.style.backgroundColor = 'gray'
-      selecaoUnica(event)
-    }); 
+      const selecao = event.target;
+      selecao.style.backgroundColor = 'gray';
+      selecaoUnica(event);
+    });
   }
 };
 
