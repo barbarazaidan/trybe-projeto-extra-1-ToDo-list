@@ -56,8 +56,8 @@ const selecionandoTarefas = () => {
 // };
 
 const riscandoTarefas = (event) => {
-   event.target.classList.toggle('completed');
-}
+  event.target.classList.toggle('completed');
+};
 
 const ajustandoLista = () => {
   inserindoTarefas();
