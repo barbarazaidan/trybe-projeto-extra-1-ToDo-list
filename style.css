@@ -2,3 +2,15 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  margin: 20px;
+}
+
+ol {
+  margin: 10px;
+}
+
+.completed {
+  text-decoration: line-through solid rgb(0, 0, 0);
+}

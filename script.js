@@ -19,21 +19,11 @@ function selecaoUnica(evento) {
   }
 }
 
-// function mudandoBackground() {
-//   const itemDaLista = document.getElementsByTagName('li');
-//   for (let index = 0; index < itemDaLista.length; index += 1) {
-//     if (itemDaLista[index].className === 'marcado') {
-//       itemDaLista[index].style.backgroundColor = 'gray';
-//     }
-//   }
-// };
-
 // para verificar se houve algum clique nos itens da lista, precisei colocar um escutador em cada item. Antes disso, criei um loop que vai percorrer os todos os itens
 const selecionandoTarefas = () => {
   const itemDaLista = document.getElementsByTagName('li');
   for (let index = 0; index < itemDaLista.length; index += 1) {
     itemDaLista[index].addEventListener('click', (event) => {
-      // event.target.classList.add('marcado')
       const selecao = event.target;
       selecao.style.backgroundColor = 'gray';
       selecaoUnica(event);
@@ -41,9 +31,39 @@ const selecionandoTarefas = () => {
   }
 };
 
+// NOS DOIS CÓDIGOS COMENTADOS ABAIXO, O TOGGLE ESTÁ DANDO ERRO (QUANDO TENHO ITENS PARES NA LISTA, ELE SÓ PEGA NOS PARES; QUANDO HÁ APENAS ÍMPARES, SÓ FUNCIONA NOS ÍMPARES)
+
+// const riscandoTarefas = () => {
+//   const itemDaLista = document.getElementsByTagName('li');
+//   for (let index = 0; index < itemDaLista.length; index += 1) {
+//     itemDaLista[index].addEventListener('dblclick',(event) => {
+//       event.target.classList.toggle('completed');
+//     });
+//   }
+// };
+
+// const riscandoTarefas = () => {
+//   const itemDaLista = document.getElementsByTagName('li');
+//   for (let index = 0; index < itemDaLista.length; index += 1) {
+//     itemDaLista[index].addEventListener('dblclick',(event) => {
+//       if (event.target.className === 'completed') {
+//         event.target.classList.remove('completed')
+//       } else {
+//         event.target.className = 'completed';
+//       }
+//     });
+//   }
+// };
+
+const riscandoTarefas = (event) => {
+   event.target.classList.toggle('completed');
+}
+
 const ajustandoLista = () => {
   inserindoTarefas();
   selecionandoTarefas();
+  // riscandoTarefas();
 };
 
 criarTarefa.addEventListener('click', ajustandoLista);
+listaTarefas.addEventListener('dblclick', riscandoTarefas);
