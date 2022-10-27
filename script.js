@@ -1,6 +1,7 @@
 const criarTarefa = document.getElementById('criar-tarefa');
 const novaTarefa = document.getElementById('texto-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
+const botaoApaga = document.getElementById('apaga-tudo');
 
 const inserindoTarefas = () => {
   const itemDaLista = document.createElement('li');
@@ -67,3 +68,4 @@ const ajustandoLista = () => {
 
 criarTarefa.addEventListener('click', ajustandoLista);
 listaTarefas.addEventListener('dblclick', riscandoTarefas);
+botaoApaga.addEventListener('click', () => listaTarefas.innerHTML = "");
