@@ -66,6 +66,10 @@ const ajustandoLista = () => {
   // riscandoTarefas();
 };
 
+const apagandoTarefas = () => {
+  listaTarefas.innerHTML = '';
+};
+
 criarTarefa.addEventListener('click', ajustandoLista);
 listaTarefas.addEventListener('dblclick', riscandoTarefas);
-botaoApaga.addEventListener('click', () => listaTarefas.innerHTML = "");
+botaoApaga.addEventListener('click', apagandoTarefas);
