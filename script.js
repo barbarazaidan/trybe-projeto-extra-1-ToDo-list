@@ -4,6 +4,9 @@ const listaTarefas = document.getElementById('lista-tarefas');
 const botaoApaga = document.getElementById('apaga-tudo');
 const botaoRemoverFinalizados = document.getElementById('remover-finalizados');
 const botaoSalvarTarefas = document.getElementById('salvar-tarefas');
+const botaoCima = document.getElementById('mover-cima');
+const botaoBaixo = document.getElementById('mover-baixo');
+const botaoRemoveSelecionado = document.getElementById('remover-selecionado');
 
 const inserindoTarefas = () => {
   const itemDaLista = document.createElement('li');
@@ -21,18 +24,28 @@ function selecaoUnica(evento) {
     }
   }
 }
+// ----------------------------------------------------------------------------------------------------------------------------------------------
+// para verificar se houve algum clique nos itens da lista, precisei colocar um escutador em cada item. Antes disso, criei um loop que vai percorrer os todos os itens.
+// Essa solução foi MUITO COMPLEXA e gerou problema depois que ativo o localStorage, pois ela está vinculada ao botão criar tarefa. Aí refatorei para o próximo código.
 
-// para verificar se houve algum clique nos itens da lista, precisei colocar um escutador em cada item. Antes disso, criei um loop que vai percorrer os todos os itens
-const selecionandoTarefas = () => {
-  const itemDaLista = document.getElementsByTagName('li');
-  for (let index = 0; index < itemDaLista.length; index += 1) {
-    itemDaLista[index].addEventListener('click', (event) => {
-      const selecao = event.target;
-      selecao.style.backgroundColor = 'gray';
-      selecaoUnica(event);
-    });
-  }
+// const selecionandoTarefas = () => {
+//   const itemDaLista = document.getElementsByTagName('li');
+//   for (let index = 0; index < itemDaLista.length; index += 1) {
+//     itemDaLista[index].addEventListener('click', (event) => {
+//       const selecao = event.target;
+//       selecao.style.backgroundColor = 'gray';
+//       selecaoUnica(event);
+//     });
+//   }
+// };
+// ----------------------------------------------------------------------------------------------------------------------------------------------
+
+const selecionandoTarefas = (event) => {
+  const selecionado = event.target;
+  selecionado.style.backgroundColor = 'gray'; // quando coloco o event.target.style.backgrounColor = 'gray' de forma direta o lint dá erro: Assignment to property of function parameter 'event'
+  selecaoUnica(event);
 };
+// ----------------------------------------------------------------------------------------------------------------------------------------------
 
 // !!!!!! NOS DOIS CÓDIGOS COMENTADOS ABAIXO, O TOGGLE ESTÁ DANDO ERRO (QUANDO TENHO ITENS PARES NA LISTA, ELE SÓ PEGA NOS PARES; QUANDO HÁ APENAS ÍMPARES, SÓ FUNCIONA NOS ÍMPARES)!!!!!!!!
 
@@ -57,6 +70,7 @@ const selecionandoTarefas = () => {
 //     });
 //   }
 // };
+// ----------------------------------------------------------------------------------------------------------------------------------------------
 
 const riscandoTarefas = (event) => {
   event.target.classList.toggle('completed');
@@ -64,7 +78,7 @@ const riscandoTarefas = (event) => {
 
 const ajustandoLista = () => {
   inserindoTarefas();
-  selecionandoTarefas();
+  // selecionandoTarefas();
   // riscandoTarefas();
 };
 
@@ -106,6 +120,8 @@ const apagandoFinalizados = () => {
   }
 };
 
+// ----------------------------------------------------------------------------------------------------------------------------------------------
+
 const salvandoTarefas = () => {
   localStorage.setItem('listaTarefas', JSON.stringify(listaTarefas.innerHTML));
 };// precisei colocar o .innerHTML para o captar a informação das li que estavam dentro da listaTarefas
@@ -116,8 +132,25 @@ if (tarefasSalvas !== null) {
   listaTarefas.innerHTML = tarefasSalvas;
 }
 
+const subindoTarefas = () => {};
+const descendoTarefas = () => {};
+
+const removendoSelecionados = () => {
+  const itemDaLista = document.getElementsByTagName('li');
+  // console.log(itemDaLista)
+  for (let index = itemDaLista.length - 1; index >= 0; index -= 1) {
+    if (itemDaLista[index].style.backgroundColor === 'gray') {
+      itemDaLista[index].remove();
+    }
+  }
+};
+
 criarTarefa.addEventListener('click', ajustandoLista);
 listaTarefas.addEventListener('dblclick', riscandoTarefas);
+listaTarefas.addEventListener('click', selecionandoTarefas);
 botaoApaga.addEventListener('click', apagandoTarefas);
 botaoRemoverFinalizados.addEventListener('click', apagandoFinalizados);
 botaoSalvarTarefas.addEventListener('click', salvandoTarefas);
+botaoCima.addEventListener('click', subindoTarefas);
+botaoBaixo.addEventListener('click', descendoTarefas);
+botaoRemoveSelecionado.addEventListener('click', removendoSelecionados);
