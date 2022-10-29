@@ -3,6 +3,7 @@ const novaTarefa = document.getElementById('texto-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 const botaoApaga = document.getElementById('apaga-tudo');
 const botaoRemoverFinalizados = document.getElementById('remover-finalizados');
+const botaoSalvarTarefas = document.getElementById('salvar-tarefas');
 
 const inserindoTarefas = () => {
   const itemDaLista = document.createElement('li');
@@ -33,7 +34,7 @@ const selecionandoTarefas = () => {
   }
 };
 
-// NOS DOIS CÓDIGOS COMENTADOS ABAIXO, O TOGGLE ESTÁ DANDO ERRO (QUANDO TENHO ITENS PARES NA LISTA, ELE SÓ PEGA NOS PARES; QUANDO HÁ APENAS ÍMPARES, SÓ FUNCIONA NOS ÍMPARES) Não entendi
+// !!!!!! NOS DOIS CÓDIGOS COMENTADOS ABAIXO, O TOGGLE ESTÁ DANDO ERRO (QUANDO TENHO ITENS PARES NA LISTA, ELE SÓ PEGA NOS PARES; QUANDO HÁ APENAS ÍMPARES, SÓ FUNCIONA NOS ÍMPARES)!!!!!!!!
 
 // const riscandoTarefas = () => {
 //   const itemDaLista = document.getElementsByTagName('li');
@@ -105,7 +106,18 @@ const apagandoFinalizados = () => {
   }
 };
 
+const salvandoTarefas = () => {
+  localStorage.setItem('listaTarefas', JSON.stringify(listaTarefas.innerHTML));
+};// precisei colocar o .innerHTML para o captar a informação das li que estavam dentro da listaTarefas
+
+// aqui é onde eu, de fato, atribuo os li na lista novamente, do contrário eles ficam salvos no localStorage, mas eu não atribuo a informação à nada quando atualizo a página
+const tarefasSalvas = JSON.parse(localStorage.getItem('listaTarefas'));
+if (tarefasSalvas !== null) {
+  listaTarefas.innerHTML = tarefasSalvas;
+}
+
 criarTarefa.addEventListener('click', ajustandoLista);
 listaTarefas.addEventListener('dblclick', riscandoTarefas);
 botaoApaga.addEventListener('click', apagandoTarefas);
 botaoRemoverFinalizados.addEventListener('click', apagandoFinalizados);
+botaoSalvarTarefas.addEventListener('click', salvandoTarefas);
