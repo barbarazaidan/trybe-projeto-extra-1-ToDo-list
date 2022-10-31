@@ -132,8 +132,72 @@ if (tarefasSalvas !== null) {
   listaTarefas.innerHTML = tarefasSalvas;
 }
 
-const subindoTarefas = () => {};
-const descendoTarefas = () => {};
+// -------------------------------------------------------------------------------------------------
+
+const subindo = (item) => {
+  const atual = item;
+  const anterior = item.previousSibling;
+  const texto = anterior.innerHTML;
+  const classe = anterior.className;
+  // const classe2 =  atual.className;
+  // console.log(atual);
+  // console.log(anterior);
+  // console.log(classe)
+  // console.log(classe2)
+  anterior.innerHTML = atual.innerHTML;
+  anterior.style.backgroundColor = 'gray';
+  anterior.className = atual.className;
+  // console.log(texto)
+  atual.innerHTML = texto;
+  atual.style.backgroundColor = 'white';
+  atual.className = classe;
+};
+
+// As funções subindoTarefas, subindo, descendoTarefas e descendo acabam deixando o código verboso e não muito elegante. Com certeza, tem várias maneiras de refatorar esse código, que preciso verificar no futuro. Por enquanto, ainda não consigo pensar em outras alternativas de fazer mais processos.
+
+const subindoTarefas = () => {
+  const itemDaLista = document.querySelectorAll('li');
+  // console.log(itemDaLista);
+  for (let index = 0; index < itemDaLista.length; index += 1) {
+    if (itemDaLista[index].style.backgroundColor === 'gray' && index === 0) {
+      // console.log('não pode subir')
+      break;
+    } else if (itemDaLista[index].style.backgroundColor === 'gray') {
+      subindo(itemDaLista[index]);
+    }
+  }
+};
+
+// -----------------------------------------------------------------------------------------------------
+
+const descendo = (item) => {
+  const atual = item;
+  const proximo = item.nextSibling;
+  // console.log(proximo.innerText);
+  const texto = proximo.innerHTML;
+  const classe = proximo.className;
+  proximo.innerHTML = atual.innerHTML;
+  proximo.style.backgroundColor = 'gray';
+  proximo.className = atual.className;
+  atual.innerHTML = texto;
+  atual.style.backgroundColor = 'white';
+  atual.className = classe;
+};
+
+const descendoTarefas = () => {
+  const itemDaLista = document.querySelectorAll('li');
+  // console.log(itemDaLista);
+  for (let index = itemDaLista.length - 1; index >= 0; index -= 1) { // tive de fazer regressivo, pois de forma crescente, o item selecionado descia para a última posição da lista. Nos testes com console.log, vi que era como se ele quisesse mudar todos os itens que estavam abaixo dele de uma vez só. O que ocorre é que o loop se ativa automaticamente, pois na primeira iteração, no item [0], por exemplo, eu levo suas características para o item [1], aí quando o for entra na segunda iteração, ele ver que o item [1], agora também atende as condições apresentadas e segue nesses processo.
+    if (itemDaLista[index].style.backgroundColor === 'gray' && index === itemDaLista.length - 1) {
+      // console.log('não pode descer')
+      break;
+    } else if (itemDaLista[index].style.backgroundColor === 'gray') {
+      descendo(itemDaLista[index]);
+    }
+  }
+};
+
+// -------------------------------------------------------------------------------------------------
 
 const removendoSelecionados = () => {
   const itemDaLista = document.getElementsByTagName('li');
