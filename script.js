@@ -20,7 +20,7 @@ function selecaoUnica(evento) {
   const itemDaLista = document.getElementsByTagName('li');
   for (let index = 0; index < itemDaLista.length; index += 1) {
     if (itemDaLista[index] !== evento.target) {
-      itemDaLista[index].style.backgroundColor = 'white';
+      itemDaLista[index].style.backgroundColor = '#f5ac90';
     }
   }
 }
