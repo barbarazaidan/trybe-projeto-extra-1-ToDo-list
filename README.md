@@ -65,5 +65,5 @@ Requisitos Bônus
 
 > Adicione um botão com id="remover-selecionado" que, quando clicado, remove o item selecionado
 
-#### Sobre o curso da Trybe
+## Sobre o curso da Trybe
 O programa total de estudo conta com mais de 1.500 horas de aulas presenciais e online,divididas ao longo de 12 meses. O conteúdo aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
