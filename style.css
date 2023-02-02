@@ -5,14 +5,14 @@
 
 body {
   margin: 20px;
-  background-color: #f5ac90;
+  background-color: #283618;
 }
 
 header {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 80px;
   margin: 20px 10px;
-  color: rgb(62, 78, 80);
+  color: #fefae0;
   text-align: center;
 }
 
@@ -20,7 +20,7 @@ p {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 25px;
   margin: 0px 10px 20px 10px;
-  color: rgb(62, 78, 80);
+  color: #fefae0;
 }
 
 #texto-tarefa {
@@ -38,11 +38,15 @@ li {
   font-size: 20px;
 }
 
+.listaTarefas {
+  color: #fefae0;
+}
+
 #criar-tarefa {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #83BCFF;
+  background-color: #e9edc9;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
@@ -51,7 +55,7 @@ li {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #E7363C;
+  background-color: #f07167;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
@@ -60,7 +64,7 @@ li {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #EF767A;
+  background-color: #ddbea9;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
@@ -69,7 +73,7 @@ li {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #FFE347;
+  background-color: #ccd5ae;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
@@ -78,7 +82,7 @@ li {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #f0a6ca;
+  background-color: #cad2c5;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
@@ -87,7 +91,7 @@ li {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #9c89b8;
+  background-color: #cad2c5;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
@@ -96,11 +100,11 @@ li {
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: #F27618;
+  background-color: #fed9b7;
   color: rgb(62, 78, 80);
   font-size: 18px;
 }
 
 .completed {
-  text-decoration: line-through solid black;
+  text-decoration: line-through solid white;
 }

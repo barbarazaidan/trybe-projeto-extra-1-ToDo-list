@@ -12,6 +12,7 @@ const inserindoTarefas = () => {
   const itemDaLista = document.createElement('li');
   listaTarefas.appendChild(itemDaLista);
   itemDaLista.innerText = novaTarefa.value;
+  itemDaLista.className='listaTarefas'
   novaTarefa.value = '';
 };
 
@@ -20,7 +21,7 @@ function selecaoUnica(evento) {
   const itemDaLista = document.getElementsByTagName('li');
   for (let index = 0; index < itemDaLista.length; index += 1) {
     if (itemDaLista[index] !== evento.target) {
-      itemDaLista[index].style.backgroundColor = '#f5ac90';
+      itemDaLista[index].style.backgroundColor = '#283618';
     }
   }
 }
@@ -149,7 +150,7 @@ const subindo = (item) => {
   anterior.className = atual.className;
   // console.log(texto)
   atual.innerHTML = texto;
-  atual.style.backgroundColor = 'white';
+  atual.style.backgroundColor = '#283618';
   atual.className = classe;
 };
 
@@ -180,7 +181,7 @@ const descendo = (item) => {
   proximo.style.backgroundColor = 'gray';
   proximo.className = atual.className;
   atual.innerHTML = texto;
-  atual.style.backgroundColor = 'white';
+  atual.style.backgroundColor = '#283618';
   atual.className = classe;
 };
 
