@@ -17,6 +17,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 </p>
 </details>
 
+---
+
 **2 - Adicione abaixo do título um parágrafo com o texto "Clique duas vezes em um item para marcá-lo como completo"**
 
 <details><summary>Detalhes</summary>
@@ -26,6 +28,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 
 </p>
 </details>
+
+---
 
 **3 - Adicione um input onde a pessoa usuária poderá digitar o nome do item que deseja adicionar à lista**
 
@@ -37,6 +41,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 </p>
 </details>
 
+---
+
 **4 - Adicione uma lista ordenada de tarefas**
 
 <details><summary>Detalhes</summary>
@@ -46,6 +52,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 
 </p>
 </details>
+
+---
 
 **5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo**
 
@@ -57,6 +65,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 </p>
 </details>
 
+---
+
 **6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação**
 
 <details><summary>Detalhes</summary>
@@ -66,6 +76,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 
 </p>
 </details>
+
+---
 
 **7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza**
 
@@ -77,6 +89,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 </p>
 </details>
 
+---
+
 **8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo**
 
 <details><summary>Detalhes</summary>
@@ -86,6 +100,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 
 </p>
 </details>
+
+---
 
 **9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completado. Deve ser possível desfazer essa ação clicando novamente duas vezes no item**
 
@@ -97,6 +113,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 </p>
 </details>
 
+---
+
 **10 - Adicione um botão que quando clicado deve apagar todos os itens da lista**
 
 <details><summary>Detalhes</summary>
@@ -107,6 +125,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 </p>
 </details>
 
+---
+
 **11 - Adicione um botão que quando clicado remove somente os elementos finalizados da sua lista**
 
 <details><summary>Detalhes</summary>
@@ -116,6 +136,8 @@ Confira os requisitos exigidos pela Trybe (texto extraído dos readme oficial da
 
 </p>
 </details>
+
+---
 
 REQUISITOS BÔNUS
 
@@ -129,6 +151,8 @@ REQUISITOS BÔNUS
 </p>
 </details>
 
+---
+
 **13 - Adicione dois botões, que permitam mover o item selecionado para cima ou para baixo na lista de tarefas**
 
 <details><summary>Detalhes</summary>
@@ -139,6 +163,8 @@ REQUISITOS BÔNUS
 </p>
 </details>
 
+---
+
 **14 - Adicione um botão que, quando clicado, remove o item selecionado**
 
 <details><summary>Detalhes</summary>
@@ -148,6 +174,8 @@ REQUISITOS BÔNUS
 
 </p>
 </details>
+
+---
 
 ## Sobre o curso da Trybe
 O programa total de estudo conta com mais de 1.500 horas de aulas presenciais e online,divididas ao longo de 12 meses. O conteúdo aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
